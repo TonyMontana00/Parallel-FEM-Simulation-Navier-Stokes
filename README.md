@@ -11,7 +11,7 @@ $$
 \end{cases}
 $$
 
-where \(\mathbf{u}\) denotes the velocity vector, \(p\) is the pressure, \(\nu\) represents the kinematic viscosity, and \(\mathbf{f}\) is the external forcing term.
+where $\mathbf{u}$ denotes the velocity vector, $p$ is the pressure, $\nu$ represents the kinematic viscosity, and \(\mathbf{f}\) is the external forcing term.
 
 To numerically solve this problem, we utilize the finite element method (FEM), applying Taylor-Hood finite elements, which are inf-sup stable. The equations are reformulated in a weak form and discretized using the Galerkin method, creating finite-dimensional spaces for velocity and pressure, facilitating stable solutions without spurious modes.
 
