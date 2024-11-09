@@ -1,6 +1,28 @@
-# Navier-Stokes project
-This project focuses on simulating incompressible laminar flow around cylinders using the finite element method implemented using deal.II library coded in C++. 
-Various preconditioners and MPI for parallelization are employed to improve performance and manage the extensive computational demands. 
+## Mathematical Introduction
+---
+
+The incompressible, unsteady Navier-Stokes equations govern the motion of viscous fluid flow, essential for understanding laminar flow around cylindrical obstacles. These equations are expressed as:
+
+$$
+\begin{cases}
+\cfrac{\partial \mathbf{u}}{\partial t} - \nu \Delta \mathbf{u} + (\mathbf{u} \cdot \nabla)\mathbf{u} + \nabla p = \mathbf{f}, & \text{in } \Omega, \\
+\nabla \cdot \mathbf{u} = 0, & \text{in } \Omega,\\
+\text{B.C. } & \text{on }  \Gamma
+\end{cases}
+$$
+
+where \(\mathbf{u}\) denotes the velocity vector, \(p\) is the pressure, \(\nu\) represents the kinematic viscosity, and \(\mathbf{f}\) is the external forcing term.
+
+To numerically solve this problem, we utilize the finite element method (FEM), applying Taylor-Hood finite elements, which are inf-sup stable. The equations are reformulated in a weak form and discretized using the Galerkin method, creating finite-dimensional spaces for velocity and pressure, facilitating stable solutions without spurious modes.
+
+A semi-implicit backward Euler scheme is employed for time discretization, where the nonlinear terms are advanced explicitly. This scheme simplifies the nonlinear system to a linear system solved iteratively at each time step, reducing computational intensity and improving stability for laminar flow simulations.
+
+This formulation enables simulations around cylinders, where the study’s focus is on drag and lift forces characterized by the Reynolds number, which indicates flow stability and transition to turbulence at higher values.
+## Implementation and Results
+
+A C++ implementation using the deal.II library was developed to solve the incompressible Navier-Stokes equations for laminar flow around cylinders. The project integrates various preconditioners and employs MPI for parallelization, enhancing computational performance. Simulations were conducted on both 2D and 3D meshes generated with Gmsh, demonstrating accurate flow characterization and efficient convergence. The results confirm the effectiveness of the implemented strategies, achieving substantial improvements in handling complex, large-scale simulations.
+
+
 
 ## Mesh
 The 2D and 3D meshes generated with Gmsh for the simulations are located in the mesh folder. 
