@@ -22,12 +22,16 @@ This formulation enables simulations around cylinders, where the study’s focus
 
 A C++ implementation using the deal.II library was developed to solve the incompressible Navier-Stokes equations for laminar flow around cylinders. The project integrates various preconditioners and employs MPI for parallelization, enhancing computational performance. Simulations were conducted on both 2D and 3D meshes generated with Gmsh, demonstrating accurate flow characterization and efficient convergence. The results confirm the effectiveness of the implemented strategies, achieving substantial improvements in handling complex, large-scale simulations.
 
+![alt text](gliph_Re20.png)
+
 
 
 ## Mesh
 The 2D and 3D meshes generated with Gmsh for the simulations are located in the mesh folder. 
 For 2D simulations, the file "mesh_2D_coarse" can be used. 
 For 3D simulations, a variety of meshes are available, ranging from the coarser "mesh-0.1" to the finer "mesh-0.0125."
+
+![alt text](Mesh_3D.png)
 
 ## Src
 The source code is organized into three main files:
